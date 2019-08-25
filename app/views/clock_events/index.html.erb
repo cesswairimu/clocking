@@ -1,0 +1,23 @@
+<h1>Teachers Clock Events</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Teacher's Email</th>
+      <th scope="col">Time in</th>
+      <th scope="col">Time Out</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clock_events.each do |event| %>
+      <tr>
+        <td><%= event.teacher.email %></td>
+        <td><%= event.time_in %></td>
+        <td><%= event.time_out %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Back', root_path %>
+

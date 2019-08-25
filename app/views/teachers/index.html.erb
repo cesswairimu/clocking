@@ -6,10 +6,12 @@
 <p> Make sure to clock in  when u come in and out when you leave </p>
 
 <% unless teacher_signed_in? %>
-<%= link_to 'Login to clock time', new_teacher_session_path, class: 'btn btn-lg btn-outline-info' %>
+    <%= link_to 'Login to clock time', new_teacher_session_path, class: 'btn btn-lg btn-outline-info' %>
 <%else%>
 
-              <% teacher = Teacher.find_by(email: current_teacher.email) %>
+    <% teacher = Teacher.find_by(email: current_teacher.email) %>
     <%= link_to 'Clock time', "/teachers/#{teacher.id}", class: 'btn btn-lg btn-outline-primary' %>
 <% end %>
+
+<%= link_to 'Clock Events  List', clock_events_path, class: 'btn btn-lg btn-outline-secondary' %>
 

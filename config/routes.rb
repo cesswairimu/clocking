@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :teachers
   resources :teachers
-  resources :clock_events, only:  [ :new, :index, :update ]
+  resources :clock_events, only:  [ :new, :index, :update, :destroy ]
 
 
 
