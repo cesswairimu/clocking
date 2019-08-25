@@ -15,7 +15,12 @@
   <%= @teacher.email %>
 </p>
 
-<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
-<%= link_to 'Back', teachers_path %>
+<%= link_to 'Back', teachers_path %> |
+<%= link_to 'Edit', edit_teacher_path(@teacher) %>
+<br>
 
-<%=  Time.now %>
+<% if @teacher.clocked? %>
+    <%= link_to 'Clock Out', clock_event_path, method: :put, class: 'btn btn-lg btn-info' %>
+<% else %>
+<%= link_to 'Clock In', new_clock_event_path, class: 'btn btn-lg btn-success' %>
+<% end%>

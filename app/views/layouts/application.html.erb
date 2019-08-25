@@ -23,7 +23,7 @@
               <%= link_to 'Clock time', "/teachers/#{teacher.id}", class: 'navbar-link' %> |
               <%= link_to "Logout", destroy_teacher_session_path, method: :delete, :class => 'navbar-link'  %>
           <% else %>
-              <%= link_to "Sign up", new_teacher_path, :class => 'navbar-link'  %> |
+              <%= link_to "Sign up", '/teachers/sign_up', :class => 'navbar-link'  %> |
               <%= link_to "Login", new_teacher_session_path, :class => 'navbar-link'  %>
           <% end %>
           </p>
